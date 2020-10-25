@@ -1,10 +1,24 @@
+// Assignment Code
+var generateBtn = document.querySelector("#generate");
 
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
+
+}
+
+// Add event listener to generate button
+// this is call back function - will only run then clicked
+generateBtn.addEventListener("click", writePassword);
 
 // Declare a list of special characters 
 
-// var specialSet = [" ", "!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "\", "]", "^", "_", "`", "/", "{", "|", "}", "~" ]; 
+var specialSet = [" ", "!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"];
 // console.log(specialSet); 
-// why this one keep giving me error? 
+// why this one keep giving me error? got rid of some characters . \ gives me error... 
 
 
 // Declare  a list of numeric characters 
@@ -22,13 +36,13 @@ var upperCase = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P'
 // Assignment Code / code generator button 
 var generateBtn = document.querySelector("#generate");
 
-
+var password; 
 
 
 
 //  generateBtn is clicked, prompt asking - 
 
-function settingPasswordLength() {
+function generatePassword() {
 
 //prompting the user for a passwordlength
 
@@ -47,8 +61,6 @@ if (!(passwordLength>=8 || passwordLength <=128)){
 }
 
 
-
-
 // Declare a new list of charcterToUse
 
 var charactersToUse = []; 
@@ -57,30 +69,24 @@ var charactersToUse = [];
 var password = ""; 
 
 
-
-
-
-
 // confirm if the password generator 'isUsingNumbers'
-  var UseNumbers = confirm ('Use Numbers in your password?'); 
+
 // IF 'isUsingNumbers'
-  if (UseNumbers == true){
-
-  
-
-// Then push 'numbersset'inton 'charactersToUSe' List 
-  
-
-// and Append on random number from the 'numbersset' list 
-
-charactersToUse = charactersToUse.push(numberSet); 
+// Then push 'numbers'inton 'charactersToUSe' List 
+// and Append on random number from the 'numbers' list 
+var UseNumbers = confirm ('Use Numbers in your password?'); 
+if (UseNumbers == true){
+    charactersToUse = charactersToUse.push(numberSet); 
 }
+
 
 // confirm if the password generator 'isUsingSpecial'
 
 // IF 'isUsingSpecial'
-// Then push 'specialset' into charactersToUSe' List 
+// Then push 'specialSet' into charactersToUSe' List 
 // and Append on random number from the 'specialSet' list 
+
+var UseSpecial = confirm('Use Special Characters to you password'); 
 
 
 
@@ -88,7 +94,7 @@ charactersToUse = charactersToUse.push(numberSet);
 // confirm if the password generator 'isUsingUpper'
 // IF 'isUsingUpper'
 // Then push 'uppercase'into 'charactersToUSe' List 
-// and Append on random number from the 'uppercase' list 
+// and Append on random number from the 'numbers' list 
 
 
 
@@ -96,7 +102,7 @@ charactersToUse = charactersToUse.push(numberSet);
 // confirm if the password generator 'isUsingLower'
 // IF 'isUsingLower'
 // Then push 'lowercase '  into 'charactersToUSe' List 
-// and Append on random number from the 'lowercase' list 
+// and Append on random number from the 'numbers' list 
 
 
 // If not 'charactersToUse.length'
@@ -123,22 +129,4 @@ while (password.length < passwordLength) {
 // Return 'password' 
 }
 return password; 
-
 }
-
-
-// Assignment Code
-var generateBtn = document.querySelector("#generate");
-
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
-}
-
-// Add event listener to generate button
-// this is call back function - will only run then clicked
-generateBtn.addEventListener("click", writePassword);
