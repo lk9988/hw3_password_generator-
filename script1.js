@@ -16,11 +16,14 @@ var specialSet = [" ", "!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-
 var numberSet = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]; 
 
 // Declare  a list of lowercase characters 
-var lowerSet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+var lowerSet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 
 
 // Declare  a list of uppercase characters 
-var upperSet = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+var upperSet = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+// var upperSet = [ABCDEFGHIJKLMNOPQRSTUVWXYZ].split(""); 
+// when selected, it becomes one big array, not getting randomizized later 
+
 
 
 // Assignment Code / code generator button 
